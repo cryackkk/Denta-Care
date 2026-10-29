@@ -1,0 +1,13 @@
+# Операционная система и редакторы
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Локальные настройки и секреты
+.env
+backend/config.local.php
+
+# Логи и дампы
+*.log
+*.sql.bak

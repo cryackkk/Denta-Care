@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Джессика - Denta Care</title>
+    <link rel="stylesheet" href="style.css?v=20260622">
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="logo-left">
+        <img src="img/logo.png" class="logo-img">
+        <div class="nazvanie">
+            <p>DENTA CARE</p>
+            Irish Dental Clinic
+        </div>
+    </div>
+    <div class="header-buttons" id="header-buttons">
+        <a href="index.html" class="glavnaya-button">Главная</a>
+        <a href="about.html" class="about-button">О проекте</a>
+        <a href="staff.html" class="section-button">Прочий персонал</a>
+    </div>
+  </div>
+</header>
+
+<main>
+    <div class="doctor-profile">
+        <div class="doctor-photo">
+            <img src="img/jessica.png" alt="Джессика">
+        </div>
+        
+        <div class="doctor-visitka">
+            <h1>Джессика</h1>
+            <div class="doctor-rank">Стоматолог-ортодонт</div>
+            
+            <div class="doctor-info">
+                <div class="info-section">
+                    <h3>Опыт работы</h3>
+                    <p>2 года активной практики в ортодонтии</p>
+                </div>
+                
+                <div class="info-section">
+                    <h3>Специализация</h3>
+                    <ul>
+                        <li>Исправление прикуса брекет-системами</li>
+                        <li>Элайнеры (невидимые капы)</li>
+                        <li>Детская ортодонтия</li>
+                        <li>Съёмные ортодонтические аппараты</li>
+                    </ul>
+                </div>
+                
+                <div class="info-section">
+                    <h3>Образование</h3>
+                    <p>Казахский Национальный Медицинский Университет<br>
+                    Специализация по ортодонтии, Dublin Dental School</p>
+                </div>
+            </div>
+            
+            <button class="booking-button" onclick="openBookingForm(3)">
+                <span class="booking-icon">📅</span>
+                Записаться на приём
+            </button>
+        </div>
+    </div>
+    
+    <!-- ПРАЙС-ЛИСТ -->
+    <div class="price-list-section">
+        <h2>Прайс-лист услуг</h2>
+        
+        <div class="price-list">
+            <div class="price-item">
+                <div class="service-info">
+                    <div class="service-name">Консультация ортодонта</div>
+                    <div class="service-description">Первичный осмотр, составление плана лечения</div>
+                </div>
+                <div class="service-price">8,000 ₸</div>
+            </div>
+            
+            <div class="price-item">
+                <div class="service-info">
+                    <div class="service-name">Металлические брекеты (1 челюсть)</div>
+                    <div class="service-description">Установка классической брекет-системы</div>
+                </div>
+                <div class="service-price">180,000 ₸</div>
+            </div>
+            
+            <div class="price-item">
+                <div class="service-info">
+                    <div class="service-name">Керамические брекеты (1 челюсть)</div>
+                    <div class="service-description">Эстетичная брекет-система под цвет зубов</div>
+                </div>
+                <div class="service-price">250,000 ₸</div>
+            </div>
+            
+            <div class="price-item">
+                <div class="service-info">
+                    <div class="service-name">Элайнеры (полный курс)</div>
+                    <div class="service-description">Невидимые капы для исправления прикуса, комплект на весь период лечения</div>
+                </div>
+                <div class="service-price">450,000 ₸</div>
+            </div>
+            
+            <div class="price-item">
+                <div class="service-info">
+                    <div class="service-name">Коррекция брекет-системы</div>
+                    <div class="service-description">Ежемесячное посещение, замена дуг и лигатур</div>
+                </div>
+                <div class="service-price">15,000 ₸</div>
+            </div>
+            
+            <div class="price-item">
+                <div class="service-info">
+                    <div class="service-name">Ретейнеры (после снятия брекетов)</div>
+                    <div class="service-description">Фиксация результата лечения</div>
+                </div>
+                <div class="service-price">45,000 ₸</div>
+            </div>
+        </div>
+        
+        <button class="payment-button" onclick="goToPayment(3)">
+            💳 Перейти к оплате
+        </button>
+    </div>
+</main>
+
+<footer class="footer">
+   <div class="footer-content">
+      <p>© 2026 Denta Care</p>
+      <p>Алматы | +7 700 000 0000</p>
+   </div>
+</footer>
+
+<script src="js/auth.js?v=20260622"></script>
+<script src="js/booking.js?v=20260622"></script>
+
+</body>
+</html>

@@ -1,0 +1,1211 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background: #0b1426;
+    color: white;
+    min-height: 100vh;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: 
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url('img/background.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px);
+    z-index: -1;
+}
+
+main {
+    flex: 1;
+}
+
+/* ============ HEADER ============ */
+
+.header {
+    background: rgba(10, 0, 99, 0.514);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 20px 40px;
+    margin: 30px 40px;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+}
+
+.nazvanie p {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.nazvanie {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+/* ============ КНОПКИ ============ */
+
+.header-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.section-button,
+.about-button,
+.glavnaya-button {
+    padding: 10px 22px;
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 25px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.section-button:hover,
+.about-button:hover,
+.glavnaya-button:hover {
+    background: white;
+    color: #0b1426;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255,255,255,0.3);
+}
+
+/* ============ БЛОК АВТОРИЗАЦИИ В HEADER ============ */
+
+.auth-status-block {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-left: 15px;
+    margin-left: 5px;
+    border-left: 1px solid rgba(255,255,255,0.25);
+}
+
+.user-name-display {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13.5px;
+    color: white;
+    opacity: 0.92;
+    white-space: nowrap;
+    max-width: 170px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.user-name-display .user-icon {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.12);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+.logout-button,
+.login-link-button,
+.register-link-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 13.5px;
+    font-family: inherit;
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.logout-button {
+    background: transparent;
+    color: #ffb4b4;
+    border: 1px solid rgba(255, 138, 138, 0.45);
+}
+
+.logout-button:hover {
+    background: #e35353;
+    color: white;
+    border-color: #e35353;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(227, 83, 83, 0.4);
+}
+
+.login-link-button {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.35);
+}
+
+.login-link-button:hover {
+    background: white;
+    color: #0b1426;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255,255,255,0.3);
+}
+
+.register-link-button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: 1px solid transparent;
+}
+
+.register-link-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(102, 126, 234, 0.45);
+}
+
+@media (max-width: 768px) {
+    .auth-status-block {
+        border-left: none;
+        margin-left: 0;
+        padding-left: 0;
+        border-top: 1px solid rgba(255,255,255,0.2);
+        padding-top: 12px;
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+/* ============ ГЛАВНАЯ СТРАНИЦА ============ */
+
+.center-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 60px 80px;
+    gap: 60px;
+}
+
+.left-side {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    flex: 1;
+}
+
+.right-side {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.kolonka1,
+.kolonka2,
+.kolonka3 {
+    width: 100%;
+    max-width: 400px;
+    padding: 25px;
+    border-radius: 15px;
+    background: rgba(10, 0, 99, 0.514);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
+}
+
+.kolonka1:hover,
+.kolonka2:hover,
+.kolonka3:hover {
+    transform: translateX(10px);
+    border-color: rgba(255,255,255,0.3);
+    box-shadow: 0 10px 30px rgba(10, 0, 99, 0.5);
+}
+
+.kolonka1 p,
+.kolonka2 p,
+.kolonka3 p {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #88ccff;
+}
+
+/* ============ КАРТОЧКИ ДОКТОРОВ ============ */
+
+.doctor-card-link {
+    display: block;
+    width: fit-content;
+    text-decoration: none;
+    user-select: none;
+}
+
+.doctor-card {
+    width: fit-content;
+    min-width: 300px;
+    max-width: 400px;
+    background: rgba(10, 0, 99, 0.514);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.doctor-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(10, 0, 99, 0.7);
+    border-color: rgba(255,255,255,0.3);
+}
+
+.doctor-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.doctor-inner {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.doctor-text {
+    text-align: center;
+    margin-top: 15px;
+    color: aliceblue;
+}
+
+.spec {
+    font-size: 13px;
+    opacity: 0.7;
+    margin-bottom: 5px;
+}
+
+.name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.experience {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
+/* ============ СТРАНИЦА "ПРОЧИЙ ПЕРСОНАЛ" ============ */
+
+.staff-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    padding: 60px 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ============ СТРАНИЦА "О ПРОЕКТЕ" ============ */
+
+.about-text {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 40px 60px;
+    background: rgba(10, 0, 99, 0.514);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.zagolovok {
+    font-size: 32px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #88ccff;
+}
+
+.daaa {
+    font-size: 16px;
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+/* ============ СТРАНИЦА ДОКТОРА ============ */
+
+.doctor-profile {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 60px 80px 30px;
+    gap: 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.doctor-photo {
+    flex-shrink: 0;
+}
+
+.doctor-photo img {
+    width: 420px;
+    height: auto;
+    border-radius: 20px;
+    border: 3px solid rgba(255,255,255,0.2);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+}
+
+.doctor-visitka {
+    flex: 1;
+    background: rgba(10, 0, 99, 0.514);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.doctor-visitka h1 {
+    margin: 0 0 10px 0;
+    font-size: 36px;
+    color: white;
+}
+
+.doctor-rank {
+    font-size: 18px;
+    color: #88ccff;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.doctor-info {
+    margin-bottom: 30px;
+}
+
+.info-section {
+    margin-bottom: 25px;
+}
+
+.info-section h3 {
+    font-size: 18px;
+    color: #88ccff;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+.info-section p {
+    margin: 0;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.info-section ul {
+    margin: 10px 0;
+    padding-left: 20px;
+    line-height: 1.8;
+}
+
+.info-section li {
+    opacity: 0.9;
+    margin-bottom: 5px;
+}
+
+/* ============ ПРАЙС-ЛИСТ ============ */
+
+.price-list-section {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 80px 60px;
+}
+
+.price-list-section h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #88ccff;
+}
+
+.price-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.price-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(10, 0, 99, 0.514);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 25px 30px;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
+}
+
+.price-item:hover {
+    transform: translateX(10px);
+    border-color: rgba(255,255,255,0.3);
+    box-shadow: 0 10px 30px rgba(10, 0, 99, 0.5);
+}
+
+.service-info {
+    flex: 1;
+}
+
+.service-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: white;
+}
+
+.service-description {
+    font-size: 14px;
+    opacity: 0.7;
+    line-height: 1.5;
+}
+
+.service-price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #88ccff;
+    margin-left: 30px;
+    white-space: nowrap;
+}
+
+.payment-button {
+    width: 100%;
+    max-width: 500px;
+    margin: 40px auto 0;
+    display: block;
+    padding: 18px 30px;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
+}
+
+.payment-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(16, 185, 129, 0.6);
+    background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+}
+
+/* ============ КНОПКА ЗАПИСИ ============ */
+
+.booking-button {
+    width: 100%;
+    padding: 18px 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+.booking-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(102, 126, 234, 0.6);
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+.booking-button:active {
+    transform: translateY(-1px);
+}
+
+.booking-icon {
+    font-size: 24px;
+}
+
+/* ============ РЕГИСТРАЦИЯ И ВХОД ============ */
+
+.registration-container {
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 50px;
+    background: rgba(10, 0, 99, 0.514);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.registration-container h1 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.registration-subtitle {
+    text-align: center;
+    opacity: 0.7;
+    margin-bottom: 40px;
+    font-size: 16px;
+}
+
+.registration-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #88ccff;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+    padding: 12px 15px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 10px;
+    color: white;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.form-group select option {
+    background: #1a1a2e;
+    color: white;
+    padding: 10px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #667eea;
+    background: rgba(255,255,255,0.15);
+}
+
+.form-group input::placeholder {
+    color: rgba(255,255,255,0.5);
+}
+
+.checkbox-group label {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.link {
+    color: #88ccff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.link:hover {
+    color: #667eea;
+    text-decoration: underline;
+}
+
+.submit-button {
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+.submit-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(102, 126, 234, 0.6);
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+.form-footer {
+    text-align: center;
+    margin-top: 20px;
+    opacity: 0.8;
+}
+
+/* ============ СТРАНИЦА ОПЛАТЫ ============ */
+
+.payment-container {
+    max-width: 700px;
+    margin: 60px auto;
+    padding: 50px;
+    background: rgba(10, 0, 99, 0.514);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.payment-container h1 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.payment-subtitle {
+    text-align: center;
+    opacity: 0.7;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+.payment-info-card {
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.doctor-info-payment h3 {
+    margin: 0;
+    color: #88ccff;
+    font-size: 18px;
+}
+
+.payment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.price-display {
+    padding: 15px 20px;
+    background: rgba(136, 204, 255, 0.1);
+    border: 2px solid #88ccff;
+    border-radius: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #88ccff;
+    text-align: center;
+}
+
+.payment-section-title {
+    margin: 20px 0 10px;
+    color: #88ccff;
+    font-size: 20px;
+}
+
+.card-info-box {
+    background: rgba(255,255,255,0.05);
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.info-text {
+    text-align: center;
+    opacity: 0.6;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.card-details-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 15px;
+}
+
+.payment-summary {
+    background: rgba(255,255,255,0.05);
+    padding: 25px;
+    border-radius: 15px;
+    margin-top: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.summary-row.total {
+    font-size: 20px;
+    font-weight: bold;
+    color: #88ccff;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    margin-bottom: 0;
+}
+
+.payment-submit {
+    margin-top: 20px;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
+}
+
+.payment-submit:hover {
+    background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+    box-shadow: 0 12px 30px rgba(16, 185, 129, 0.6);
+}
+
+.payment-security {
+    text-align: center;
+    margin-top: 30px;
+    opacity: 0.6;
+    font-size: 13px;
+}
+
+/* ============ FOOTER ============ */
+
+.footer {
+    margin-top: auto;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    padding: 30px 60px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0.8;
+}
+
+.footer-content p {
+    margin: 0;
+}
+
+/* ============ АДМИН-ПАНЕЛЬ ============ */
+
+.admin-container {
+    max-width: 1600px;
+    margin: 60px auto;
+    padding: 40px;
+    background: rgba(10, 0, 99, 0.514);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.admin-container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.admin-name-display {
+    color: white;
+    margin-right: 15px;
+    opacity: 0.9;
+}
+
+.admin-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.tab-button {
+    padding: 12px 20px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.tab-button:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+.tab-button.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-color: transparent;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.admin-table th {
+    background: rgba(102, 126, 234, 0.3);
+    color: #88ccff;
+    font-weight: bold;
+}
+
+.admin-table tr:hover {
+    background: rgba(255,255,255,0.05);
+}
+
+.status-badge {
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.status-pending {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.status-confirmed {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status-completed {
+    background: #d1ecf1;
+    color: #0c5460;
+}
+
+.status-cancelled {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.delete-btn,
+.confirm-btn,
+.cancel-btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.3s ease;
+    margin: 0 3px;
+}
+
+.delete-btn {
+    background: #f44336;
+    color: white;
+}
+
+.delete-btn:hover {
+    background: #d32f2f;
+}
+
+.confirm-btn {
+    background: #4caf50;
+    color: white;
+}
+
+.confirm-btn:hover {
+    background: #45a049;
+}
+
+.cancel-btn {
+    background: #ff9800;
+    color: white;
+}
+
+.cancel-btn:hover {
+    background: #f57c00;
+}
+
+.filter-section {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.filter-section select {
+    padding: 10px 15px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+}
+
+.stats-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-card-admin {
+    background: rgba(255,255,255,0.05);
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.stat-title {
+    font-size: 14px;
+    color: #88ccff;
+    margin-bottom: 10px;
+}
+
+.stat-value {
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+}
+
+.admin-form {
+    background: rgba(255,255,255,0.05);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.1);
+    max-width: 800px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* ============ СТРАНИЦА ЗАПИСИ ============ */
+
+.booking-container {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 50px;
+    background: rgba(10, 0, 99, 0.514);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.booking-container h1 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.booking-subtitle {
+    text-align: center;
+    opacity: 0.7;
+    margin-bottom: 40px;
+    font-size: 16px;
+}
+
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.booking-form textarea {
+    padding: 12px 15px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 10px;
+    color: white;
+    font-size: 15px;
+    font-family: inherit;
+    resize: vertical;
+}
+
+.booking-form textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    background: rgba(255,255,255,0.15);
+}
+
+.price-display-booking {
+    padding: 15px 20px;
+    background: rgba(102, 126, 234, 0.2);
+    border: 2px solid #667eea;
+    border-radius: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #88ccff;
+    text-align: center;
+}
+
+.patient-info {
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.1);
+    margin-top: 10px;
+}
+
+.patient-info h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #88ccff;
+}
+
+.patient-info p {
+    margin: 8px 0;
+    line-height: 1.6;
+}
+
+.booking-submit {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+.booking-submit:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    box-shadow: 0 12px 30px rgba(102, 126, 234, 0.6);
+}
+
+/* ============ АДАПТИВНОСТЬ ============ */
+
+@media (max-width: 1200px) {
+    .center-block {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .left-side {
+        width: 100%;
+    }
+    
+    .doctor-profile {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .doctor-photo img {
+        width: 100%;
+        max-width: 420px;
+    }
+    
+    .price-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .service-price {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 20px;
+        margin: 20px;
+    }
+    
+    .header-inner {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .center-block,
+    .staff-grid,
+    .about-text,
+    .doctor-profile,
+    .price-list-section {
+        padding: 30px 20px;
+    }
+    
+    .registration-container,
+    .payment-container,
+    .booking-container,
+    .admin-container {
+        padding: 30px 20px;
+        margin: 30px 20px;
+    }
+    
+    .logo-img {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .footer {
+        padding: 20px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    
+    .card-details-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .admin-tabs {
+        flex-direction: column;
+    }
+    
+    .stats-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .filter-section {
+        flex-direction: column;
+    }
+}

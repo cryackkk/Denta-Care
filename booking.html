@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Запись на приём - Denta Care</title>
+    <link rel="stylesheet" href="style.css?v=20260622">
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="logo-left">
+        <img src="img/logo.png" class="logo-img">
+        <div class="nazvanie">
+            <p>DENTA CARE</p>
+            Irish Dental Clinic
+        </div>
+    </div>
+    <div class="header-buttons" id="header-buttons">
+        <a href="index.html" class="glavnaya-button">Главная</a>
+        <a href="about.html" class="about-button">О проекте</a>
+        <a href="staff.html" class="section-button">Прочий персонал</a>
+    </div>
+  </div>
+</header>
+
+<main>
+    <div class="booking-container">
+        <h1>📅 Запись на приём</h1>
+        <p class="booking-subtitle">Выберите доктора, дату и время</p>
+        
+        <form id="bookingForm" class="booking-form" onsubmit="submitBooking(event)">
+            
+            <!-- Выбор доктора -->
+            <div class="form-group">
+                <label for="doctorSelect">Выберите доктора *</label>
+                <select id="doctorSelect" name="doctor" required onchange="loadDoctorServices()">
+                    <option value="">-- Выберите доктора --</option>
+                    <option value="1">Доктор Ли (SSS-ранг) - Эстетическая стоматология</option>
+                    <option value="2">Ли Младший - Стоматолог-терапевт</option>
+                    <option value="3">Джессика - Стоматолог-ортодонт</option>
+                    <option value="4">Доктор Ванс - Хирург-стоматолог</option>
+                </select>
+            </div>
+            
+            <!-- Выбор услуги -->
+            <div class="form-group">
+                <label for="serviceSelect">Выберите услугу *</label>
+                <select id="serviceSelect" name="service" required onchange="updateServicePrice()">
+                    <option value="">-- Сначала выберите доктора --</option>
+                </select>
+            </div>
+            
+            <!-- Стоимость услуги -->
+            <div class="form-group">
+                <label>Стоимость услуги</label>
+                <div class="price-display-booking" id="servicePrice">0 ₸</div>
+            </div>
+            
+            <!-- Дата записи -->
+            <div class="form-group">
+                <label for="appointmentDate">Дата приёма *</label>
+                <input type="date" id="appointmentDate" name="date" required onchange="loadAvailableSlots()">
+            </div>
+            
+            <!-- Время записи -->
+            <div class="form-group">
+                <label for="timeSelect">Время приёма *</label>
+                <select id="timeSelect" name="time" required>
+                    <option value="">-- Выберите дату --</option>
+                </select>
+            </div>
+            
+            <!-- Примечания -->
+            <div class="form-group">
+                <label for="notes">Примечания (необязательно)</label>
+                <textarea id="notes" name="notes" rows="3" placeholder="Опишите ваши жалобы или особые пожелания"></textarea>
+            </div>
+            
+            <!-- Информация о пациенте -->
+            <div class="patient-info">
+                <h3>Ваши данные</h3>
+                <p><strong>ФИО:</strong> <span id="patientName">Загрузка...</span></p>
+                <p><strong>Телефон:</strong> <span id="patientPhone">Загрузка...</span></p>
+                <p><strong>Email:</strong> <span id="patientEmail">Загрузка...</span></p>
+            </div>
+            
+            <button type="submit" class="submit-button booking-submit">
+                Записаться на приём
+            </button>
+            
+        </form>
+    </div>
+</main>
+
+<footer class="footer">
+   <div class="footer-content">
+      <p>© 2026 Denta Care</p>
+      <p>Алматы | +7 700 000 0000</p>
+   </div>
+</footer>
+
+<script src="js/auth.js?v=20260622"></script>
+<script src="js/booking-page.js?v=20260622"></script>
+
+</body>
+</html>
